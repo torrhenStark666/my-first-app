@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "646066854198",
+    "project_id": "poc-android-dec68",
+    "storage_bucket": "poc-android-dec68.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:646066854198:android:dbe2cf80b7b2c5630b7b97",
+        "android_client_info": {
+          "package_name": "com.alecsander.poc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "646066854198-4vkepqc8591ahj93v0cbhki07bdo1rk1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDiJKdGWbZyl-BKifnT7hVi-36H0Bb8jao"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "646066854198-4vkepqc8591ahj93v0cbhki07bdo1rk1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

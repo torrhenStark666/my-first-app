@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:context=".view.LoginActivity">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/note_list_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="640dp"
+            app:layoutManager="LinearLayoutManager" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btn_cad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/accent"
+            android:background="@drawable/login_ed_background"
+            android:layout_gravity="end|bottom"
+            android:contentDescription="@string/plus"
+            android:layout_margin="16dp" />
+
+    </LinearLayout>
+
+
+</ScrollView>
