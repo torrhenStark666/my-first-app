@@ -19,15 +19,17 @@
             android:layout_height="640dp"
             app:layoutManager="LinearLayoutManager" />
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            <Button
             android:id="@+id/btn_cad"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/login_button_background"
+            android:text="@string/create_contact"
             android:textColor="@color/accent"
-            android:background="@drawable/login_ed_background"
-            android:layout_gravity="end|bottom"
-            android:contentDescription="@string/plus"
-            android:layout_margin="16dp" />
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="70dp"
+            android:layout_marginRight="70dp"/>
+
 
     </LinearLayout>
 

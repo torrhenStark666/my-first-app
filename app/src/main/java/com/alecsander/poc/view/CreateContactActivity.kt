@@ -1,5 +1,6 @@
 package com.alecsander.poc.view
 
+import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,6 +8,7 @@ import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import com.alecsander.poc.R
 import com.alecsander.poc.model.Contact
 import com.google.firebase.auth.FirebaseAuth
@@ -45,7 +47,10 @@ class CreateContactActivity : AppCompatActivity() {
     }
 
     private fun createNewContact(){
-        val contact = Contact(null,etName?.text.toString(), etEmail?.text.toString())
+
+        val userId = mAuth?.currentUser?.uid?.toString()
+
+        val contact = Contact(userId ,etName?.text.toString(), etEmail?.text.toString())
         val key = mDatabaseReference?.push()?.key
         Log.d(tag, "Iniciando")
 
@@ -69,5 +74,26 @@ class CreateContactActivity : AppCompatActivity() {
         val intent = Intent(this@CreateContactActivity, MainActivity::class.java)
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         startActivity(intent)
+    }
+
+    private fun showDeleteDataDialog(){
+
+        val title = "Delete"
+        val message = "Are you sure to delete this contact?"
+
+        val builder = AlertDialog.Builder(this@CreateContactActivity)
+
+        builder.setTitle(title)
+        builder.setMessage(message)
+
+        builder.setPositiveButton("Yes", DialogInterface.OnClickListener { dialog, which ->
+
+        })
+
+        builder.setNegativeButton("No", DialogInterface.OnClickListener { dialog, which ->
+
+        })
+
+        builder.create().show()
     }
 }

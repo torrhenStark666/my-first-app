@@ -10,17 +10,24 @@ import androidx.recyclerview.widget.RecyclerView
 import com.alecsander.poc.model.Contact
 
 
-class ContactAdapter(private val contacts : List<Contact>,
-                     private val context: Context) : Adapter<ContactAdapter.ViewHolder>() {
+class ContactAdapter(private var contacts : List<Contact>,
+                     private val context: Context,
+                     var onItemClick: ((Contact) -> Unit)? = null) : Adapter<ContactAdapter.ViewHolder>() {
 
     override fun getItemCount(): Int {
         return contacts.size
     }
 
-    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         val itemName = itemView.findViewById<TextView>(R.id.contact_item_name)!!
         val itemContact = itemView.findViewById<TextView>(R.id.contact_item_contact)!!
+
+        init {
+            itemView.setOnClickListener {
+                onItemClick?.invoke(contacts[adapterPosition])
+            }
+        }
 
         fun bindView(contact: Contact) {
             val name = itemView.findViewById<TextView>(R.id.contact_item_name)
@@ -44,4 +51,5 @@ class ContactAdapter(private val contacts : List<Contact>,
         val view = LayoutInflater.from(context).inflate(R.layout.contact_item, parent, false)
         return ViewHolder(view)
     }
+
 }
